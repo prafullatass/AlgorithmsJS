@@ -14,10 +14,17 @@ var Stack = (function () {
       this.stack[this.top] = value;
       this.top++;
     };
+    Stack.prototype.pop = function() {
+        this.top--;
+        return(this.stack[this.top]);
+    }
     return Stack;
 }());
 
 var newStack = new Stack();
 
 newStack.push(9);
+newStack.push(5);
+console.log(newStack.pop());
+newStack.push(3);
 console.log(newStack);
