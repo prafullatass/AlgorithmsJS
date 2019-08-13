@@ -13,5 +13,7 @@ const replace = str => {
     return newstring;
 }
 
+
 console.log(replace("a d f"));
+
 
