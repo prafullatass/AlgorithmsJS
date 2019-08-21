@@ -17,6 +17,31 @@ const twoSum = arr => {
     return outputArray;
 }
 
+const sum = arr => {
+    var  givenArray =arr[0];
+    var outputArray = [];
+    var hashMap = {};
+   givenArray.forEach(item => {
+       var found  = false;
+       for (const key in hashMap) {
+           if(parseInt(key) + item === arr[1])
+           {
+               outputArray.push([item, parseInt(key)]);
+               hashMap[key]--;
+               if(hashMap[key] === 0)
+               {
+                   delete hashMap[key];
+                }
+                found = true;
+            }
+        }
+        if(!found)
+            hashMap[item] = hashMap[item] + 1 || 1;
+        })
+        return outputArray;
+   };
 
-console.log(twoSum([[1,2,3,4,2,3,0,5], 5]));
+
+console.log("sum");
+console.log(sum([[1,2,3,4,2,3,0,5], 5]));
 
